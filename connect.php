@@ -4,10 +4,13 @@ include 'parts/global-stylesheet.php';
 if (!isset($_SESSION) || !isset($_SESSION['username'])) {
     header('location: login.php');
 }
+include 'manager/db-connect.php';
+
 ?>
 <html>
 
 <head>
+    <link href="css/connect.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,6 +31,38 @@ if (!isset($_SESSION) || !isset($_SESSION['username'])) {
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row col-3 mt-5 offset-4">
+            <h3 style="text-align: center;">Ajouter un joueur</h3>
+            <form method="post" action="manager/register-manager.php">
+                <div class="mb-6">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom du joueur">
+                </div>
+                <div class="mb-6 mt-2">
+                    <label for="prenom" class="form-label">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" placeholder="Préom du joueur">
+                </div>
+                <div class="mb-6 mt-2">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" min="15" class="form-control" name="age" placeholder="Age du joueur">
+                </div>
+                <div class="mb-6 mt-2">
+                    <label for="poste" class="form-label">Poste</label>
+                    <input type="text" class="form-control" name="poste" placeholder="Poste du joueur">
+                </div>
+                <button type="submit" class="btn btn-secondary mt-3">Ajoutez</button>
+                <div class="error text-center">
+                    <?php
+
+                    ?>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
