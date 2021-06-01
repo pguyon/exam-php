@@ -1,4 +1,7 @@
 /* BASIC */
+.error {
+    color: rgb(185, 21, 21)
+}
 
 html {
     background-color: #56baed;
