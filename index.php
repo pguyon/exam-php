@@ -22,7 +22,7 @@ $resultat = $response->fetchAll();
     <table class="table table-striped table-dark text-center">
         <thead>
             <tr>
-                <th scope="col">Numéro</th>
+
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
                 <th scope="col">Age</th>
@@ -34,7 +34,7 @@ $resultat = $response->fetchAll();
             foreach ($resultat as $membre) {
             ?>
                 <tr>
-                    <td scope="row"><?php echo ($membre['id']); ?></td>
+
                     <td><?php echo ($membre['nom']); ?></td>
                     <td><?php echo ($membre['prenom']); ?></td>
                     <td><?php echo ($membre['age'] . ' ans'); ?></td>
