@@ -35,7 +35,7 @@ include 'manager/db-connect.php';
     <div class="container">
         <div class="row col-3 mt-5 offset-4">
             <h3 style="text-align: center;">Ajouter un joueur</h3>
-            <form method="post" action="manager/register-manager.php">
+            <form method="post" action="manager/connect-manager.php">
                 <div class="mb-6">
                     <label for="nom" class="form-label">Nom</label>
                     <input type="text" class="form-control" name="nom" placeholder="Nom du joueur">
@@ -51,6 +51,31 @@ include 'manager/db-connect.php';
                 <div class="mb-6 mt-2">
                     <label for="poste" class="form-label">Poste</label>
                     <input type="text" class="form-control" name="poste" placeholder="Poste du joueur">
+                </div>
+                <div class="form-group error">
+                    <?php
+                    if (isset($_GET['error'])) {
+                        switch ($_GET['error']) {
+                            case 'no-name':
+                                echo 'Veuillez saisir le nom du joueur';
+                                break;
+                            case 'no-firstname':
+                                echo 'Veuillez saisir le prénom du joueur';
+                                break;
+                            case 'no-age':
+                                echo 'Veuillez saisir l\'âge du joueur';
+                                break;
+                            case 'no-poste':
+                                echo 'Choississez un poste';
+                                break;
+                            default: {
+                                    echo 'Erreur inconnue';
+                                    break;
+                                }
+                        }
+                    }
+                    ?>
+
                 </div>
                 <button type="submit" class="btn btn-secondary mt-3">Ajoutez</button>
                 <div class="error text-center">
