@@ -48,13 +48,13 @@ include 'manager/db-connect.php';
                 </div>
                 <div class="mb-6 mt-2">
                     <label for="prenom" class="form-label">Prenom</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Préom du joueur">
+                    <input type="text" class="form-control" name="prenom" placeholder="Prénom du joueur">
                 </div>
                 <div class="mb-6 mt-2">
                     <label for="age" class="form-label">Age</label>
                     <input type="number" min="15" class="form-control" name="age" placeholder="Age du joueur">
                 </div>
-                <select class="form-select mt-3" aria-label="Default select example" name="poste">
+                <select class="form-select mt-4" aria-label="Default select example" name="poste">
                     <option selected>Poste</option>
                     <option>Gardien</option>
                     <option>Défenseur</option>
@@ -79,10 +79,8 @@ include 'manager/db-connect.php';
                             case 'no-poste':
                                 echo 'Choississez un poste';
                                 break;
-                            default: {
-                                    echo 'Erreur inconnue';
-                                    break;
-                                }
+                            case 'too-many':
+                                echo 'Nombre de joueurs maximum atteint';
                         }
                     }
                     ?>
