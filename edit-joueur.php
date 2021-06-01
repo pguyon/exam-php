@@ -1,10 +1,14 @@
 <?php
 session_start();
 include 'parts/global-stylesheet.php';
+require_once 'function.php';
+
 if (!isset($_SESSION) || !isset($_SESSION['username'])) {
     header('location: login.php');
 }
 include 'manager/db-connect.php';
+
+$player = selectPlayer($_GET['id'], $pdo);
 
 ?>
 <html>
@@ -37,28 +41,26 @@ include 'manager/db-connect.php';
             </div>
         </div>
     </nav>
-    <h2>
-        Edition du joueur <?php echo ($_GET['id']) ?>
-    </h2>
+
     <div class="container">
         <div class="row col-3 mt-5 offset-4">
             <h3 style="text-align: center;">Editer un joueur</h3>
-            <form method="post" action="manager/connect-manager.php">
+            <form method="post" action="manager/edit-manager.php?id=<?php echo ($player['id']); ?>">
                 <div class="mb-6">
                     <label for="nom" class="form-label">Nom</label>
-                    <input type="text" class="form-control" name="nom" placeholder="Nom du joueur">
+                    <input type="text" value="<?php echo ($player['nom']); ?>" class="form-control" name="nom" placeholder="Nom du joueur">
                 </div>
                 <div class="mb-6 mt-2">
                     <label for="prenom" class="form-label">Prenom</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Préom du joueur">
+                    <input type="text" value="<?php echo ($player['prenom']); ?>" class="form-control" name="prenom" placeholder="Préom du joueur">
                 </div>
                 <div class="mb-6 mt-2">
                     <label for="age" class="form-label">Age</label>
-                    <input type="number" min="15" class="form-control" name="age" placeholder="Age du joueur">
+                    <input type="number" value="<?php echo ($player['age']); ?>" min="15" class="form-control" name="age" placeholder="Age du joueur">
                 </div>
                 <div class="mb-6 mt-2">
                     <label for="poste" class="form-label">Poste</label>
-                    <input type="text" class="form-control" name="poste" placeholder="Poste du joueur">
+                    <input type="text" value="<?php echo ($player['poste']); ?>" class="form-control" name="poste" placeholder="Poste du joueur">
                 </div>
 
                 <div class="form-group error">
