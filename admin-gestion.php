@@ -1,13 +1,9 @@
 <?php
 include 'parts/global-stylesheet.php';
-
 include 'manager/db-connect.php';
 $response = $pdo->query('SELECT * FROM joueurs;');
 $resultat = $response->fetchAll();
-
-
 ?>
-
 <html>
 
 <head>
@@ -41,10 +37,11 @@ $resultat = $response->fetchAll();
                     <td><?php echo ($membre['age'] . ' ans'); ?></td>
                     <td><?php echo ($membre['poste']); ?></td>
                     <td><a href="manager/edit.php">Editer</a></td>
-                    <td><a href="manager/delete.php">Supprimer</a></td>
+                    <td><a href="manager/delete.php?id= <?php echo $membre['id'] ?>">X</a></td>
                 </tr>
             <?php
             }
+            $response->closeCursor();
             ?>
 
 
