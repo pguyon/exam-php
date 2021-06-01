@@ -36,7 +36,7 @@ $resultat = $response->fetchAll();
                     <td><?php echo ($membre['prenom']); ?></td>
                     <td><?php echo ($membre['age'] . ' ans'); ?></td>
                     <td><?php echo ($membre['poste']); ?></td>
-                    <td><a href="manager/edit.php">Editer</a></td>
+                    <td><a href="edit-joueur.php?id= <?php echo $membre['id'] ?>">Editer</a></td>
                     <td><a href="manager/delete.php?id= <?php echo $membre['id'] ?>">X</a></td>
                 </tr>
             <?php
