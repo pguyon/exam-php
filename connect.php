@@ -54,10 +54,14 @@ include 'manager/db-connect.php';
                     <label for="age" class="form-label">Age</label>
                     <input type="number" min="15" class="form-control" name="age" placeholder="Age du joueur">
                 </div>
-                <div class="mb-6 mt-2">
-                    <label for="poste" class="form-label">Poste</label>
-                    <input type="text" class="form-control" name="poste" placeholder="Poste du joueur">
-                </div>
+                <select class="form-select mt-3" aria-label="Default select example" name="poste">
+                    <option selected>Poste</option>
+                    <option>Gardien</option>
+                    <option>Défenseur</option>
+                    <option>Milieu</option>
+                    <option>Attaquant</option>
+                    <option>Sélectionneur</option>
+                </select>
 
                 <div class="form-group error">
                     <?php
