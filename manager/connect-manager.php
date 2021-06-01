@@ -20,8 +20,8 @@ if (empty($_POST['poste'])) {
 
 
 try {
-    $req = $pdo->prepare('INSERT INTO joueur (nom, prenom, age, poste)
-VALUES(:login, :nom, :prenom, :password)');
+    $req = $pdo->prepare('INSERT INTO joueurs (nom, prenom, age, poste)
+VALUES(:nom, :prenom, :age, :poste)');
 
     $req->execute([
         'nom' => $_POST['nom'],

@@ -52,6 +52,7 @@ include 'manager/db-connect.php';
                     <label for="poste" class="form-label">Poste</label>
                     <input type="text" class="form-control" name="poste" placeholder="Poste du joueur">
                 </div>
+
                 <div class="form-group error">
                     <?php
                     if (isset($_GET['error'])) {
