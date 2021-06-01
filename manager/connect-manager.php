@@ -1,6 +1,12 @@
 <?php
 session_start();
 include 'db-connect.php';
+$req = $pdo->query('SELECT id FROM joueurs');
+$count = $req->rowCount();
+
+if ($count > 23) {
+    return header('location: ../connect.php?error=too-many');
+}
 
 
 if (!isset($_SESSION) || !isset($_SESSION['username'])) {
