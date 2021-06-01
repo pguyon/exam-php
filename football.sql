@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 01 juin 2021 à 12:32
+-- Généré le : mar. 01 juin 2021 à 14:20
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -40,8 +40,11 @@ CREATE TABLE `joueurs` (
 --
 
 INSERT INTO `joueurs` (`id`, `nom`, `prenom`, `age`, `poste`) VALUES
-(6, 'Guyon', 'Philippe', 23, 'Attaquant'),
-(5, 'Lloris', 'Hugo', 28, 'Gardien');
+(6, 'Guyon', 'Philippe', 23, 'Défenseur'),
+(5, 'Lloris', 'Hugo', 28, 'Gardien'),
+(7, 'Benzema', 'Karim', 33, 'Attaquant'),
+(10, 'Lacazette', 'Alexandre', 23, 'Attaquant'),
+(11, 'Tooms', 'Eugène', 57, 'Sélectionneur');
 
 --
 -- Index pour les tables déchargées
@@ -61,7 +64,7 @@ ALTER TABLE `joueurs`
 -- AUTO_INCREMENT pour la table `joueurs`
 --
 ALTER TABLE `joueurs`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
