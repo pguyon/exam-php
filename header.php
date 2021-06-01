@@ -34,7 +34,10 @@ include 'parts/global-stylesheet.php'
                             <a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="connect.php">Gestion des joueurs</a>
+                            <a class="nav-link active" aria-current="page" href="connect.php">Ajouter des joueurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin-gestion.php">Gérer les joueurs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="disconnect.php">Se déconnecter</a>
