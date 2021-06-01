@@ -1,13 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION) || !isset($_SESSION['username'])) {
-    header('location: login.php');
-}
-include 'parts/global-stylesheet.php';
-include 'manager/db-connect.php';
-$response = $pdo->query('SELECT * FROM joueurs;');
-$resultat = $response->fetchAll();
-?>
 <html>
 
 <head>
@@ -15,8 +5,16 @@ $resultat = $response->fetchAll();
 
 <body>
     <?php
-    include 'header.php'
+    include 'header.php';
+    if (!isset($_SESSION) || !isset($_SESSION['username'])) {
+        header('location: login.php');
+    }
+    include 'parts/global-stylesheet.php';
+    include 'manager/db-connect.php';
+    $response = $pdo->query('SELECT * FROM joueurs;');
+    $resultat = $response->fetchAll();
     ?>
+
 
     <table class="table table-striped table-dark">
         <thead>
