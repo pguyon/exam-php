@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'parts/global-stylesheet.php';
 if (!isset($_SESSION) || !isset($_SESSION['username'])) {
     header('location: login.php');

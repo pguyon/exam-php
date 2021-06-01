@@ -11,6 +11,7 @@ if (empty($_POST['password'])) {
 } else {
     if ($_POST['username'] == 'ddchamps' && $_POST['password'] == 'ddchamps') {
         $_SESSION['username'] = $_POST['username'];
+
         header("Location: ../connect.php");
     } else {
         header("Location: ../login.php?error=bad");
