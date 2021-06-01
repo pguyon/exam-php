@@ -1,15 +1,11 @@
 <?php
 session_start();
 include 'db-connect.php';
-$count = $pdo->query('SELECT * FROM joueurs');
-if ($count <= 6) {
-    return header('location: ../connect.php?error=too-many');
-}
+
 
 if (!isset($_SESSION) || !isset($_SESSION['username'])) {
     header('location: login.php');
 }
-include 'db-connect.php';
 
 if (empty($_POST['nom'])) {
     return header('location: ../connect.php?error=no-name');
