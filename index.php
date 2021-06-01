@@ -4,10 +4,7 @@ include 'parts/global-stylesheet.php';
 include 'manager/db-connect.php';
 $response = $pdo->query('SELECT * FROM joueurs ORDER BY poste;');
 $resultat = $response->fetchAll();
-
-
 ?>
-
 <html>
 
 <head>
