@@ -14,7 +14,7 @@ $resultat = $response->fetchAll();
     include 'header.php'
     ?>
 
-    <table class="table table-striped">
+    <table class="table table-striped mt-5">
         <thead>
             <tr>
                 <th scope="col">#</th>

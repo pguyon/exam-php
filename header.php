@@ -5,6 +5,7 @@ include 'parts/global-stylesheet.php'
 <html>
 
 <head>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
