@@ -1,4 +1,5 @@
 <?php
+
 try {
     $host = 'localhost';
     $dbName = 'football';
